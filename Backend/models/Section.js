@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
-const sectionSchema =new mongoose.Schema({
+const sectionSchema = new mongoose.Schema({
+  // courseId: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "Course",
+  //   required: true,
+  // },
   sectionName: {
     type: String,
     required: true,

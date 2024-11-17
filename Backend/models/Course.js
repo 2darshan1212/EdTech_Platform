@@ -34,17 +34,28 @@ const courseSchema = new mongoose.Schema({
   thumbnail: {
     type: String,
   },
-  tags: {
+  category: {
     type: mongo.Schema.Types.ObjectId,
-    ref: "Tag",
+    ref: "Category",
+  },
+  tag: {
+    type: [String],
+    required: true,
   },
   studentsEnrolled: [
     {
       type: mongo.Schema.Types.ObjectId,
       ref: "User",
-      required:true,
+      required: true,
     },
   ],
+  instructions: {
+    type: [String],
+  },
+  status: {
+    type: String,
+    enum: ["Draft", "Published"],
+  },
 });
 
 export default mongoose.model("Course", courseSchema);
